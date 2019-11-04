@@ -1,6 +1,6 @@
 ---
 - name: local repo
-  hosts: alawi
+  hosts: mygroup
   tasks:
    - name: install createrepo
      yum:
@@ -23,8 +23,8 @@
      blockinfile:
        dest: /etc/yum.repos.d/alawi.repo
        block: |
-         [alawirepo]
-         name=alawilocalrepo
+         [localrepo]
+         name=localrepo
          baseurl=file:///repo
          gpgcheck=0
          enabled=1
